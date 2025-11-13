@@ -2,7 +2,7 @@
 
 **Target Platform:** EA Sports College Football / Madden Franchise
 **Proposal Date:** May 2025
-**Project Lead:** [Your Name/Team Name]
+**Project Lead:** [Cheick Ly]
 
 ## 📝 Project Summary
 
