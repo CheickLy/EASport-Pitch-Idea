@@ -27,20 +27,3 @@ The `Inventory::remove_item` method is optimized to handle the scenario where an
 | **`delete item;`** | Explicitly deallocates the memory for the `Item` object, preventing **memory leaks**. | Ensures long-running game servers and clients remain stable and resource-efficient. |
 | **Array Compaction** | Shifts subsequent elements in the `Item* items[20]` array to fill the gap left by the deleted item. | Maintains a dense data structure, crucial for performance and faster subsequent lookups. |
 
-### C++ Snippet:
-
-```cpp
-// OptimizationTASK4.h (Excerpt)
-
-// Remove the item if quantity becomes 0
-if (item->get_quantity() == 0) {
-    delete item; // Crucial: Deallocates memory
-    
-    // Shift subsequent items up to fill the empty slot (compaction)
-    for (int i = item_index; i < item_count - 1; ++i) {
-        items[i] = items[i + 1];
-    }
-    
-    item_count--; // Updates the effective array size
-    // ...
-}
